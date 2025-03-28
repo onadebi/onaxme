@@ -1,0 +1,30 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+const { title, description, keywords } = Astro.props as {
+  title: "Onax - Freestyle building of things";
+  description: "Onax is a blog where I write about my journey as a software developer, my thoughts on technology and my experiences as a human being.";
+  keywords: "Onax, Onaefe, Onadebi, Software Developer, Web Developer, JavaScript, React, Astro, Svelte, Nodejs, Express, MongoDB, TailwindCSS, HTML, CSS, Web Development, Software Development, Technology, Blog";
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <Header />
+    <slot />
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>

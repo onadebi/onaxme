@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title: string = 'BLog'
+---
+<BaseLayout title={title}>
+    <section id="posts">
+        <h2>Posts</h2>
+        <ul>
+            <li>
+                <a href="/posts/getting-started">Getting started</a>
+            </li>
+            <li>
+                <a href="/posts/software-developer-roadmap">software developer roadmap</a>
+            </li>
+            <li>
+                <a href="/posts/deploy-aspnetcore-to-digitalocean">deploy aspnetcore to digitalocean</a>
+            </li>
+        </ul>
+    </section>
+</BaseLayout>

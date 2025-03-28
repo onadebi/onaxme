@@ -1,19 +1,8 @@
 ---
-const title: string = 'Onax - Freestyle building of things'
+const title: string = "Onax - Building things";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<div>
-			<p>The time is now!</p>
-		</div>
-	</body>
-</html>
+<BaseLayout title={title}>
+  <h3>Onaefe's blog</h3>
+</BaseLayout>

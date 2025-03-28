@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title: string = 'About Onaefe';
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+---
+
+<BaseLayout title={title}>
+        <style>
+            p{
+                margin:0px;
+                padding: 0px;
+
+            }
+            ul,ol,li{
+                padding: 0.2rem 0px ;
+            }
+            ol>span::after{
+                content: "::";
+            }
+        </style>
+		<div>
+		<p>
+            <ul>
+                {skills.map((v,i)=>{
+                    return <ol><span>{i+1}</span>{v}</ol>
+                })}
+            </ul>
+        </p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.</p>
+		</div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import Social from "./Social.astro";
+const platform = "github";
+const userId= "onadebi";
+const year = new Date().getFullYear();
+---
+
+<footer>
+    <p>Learn more about my projects on <a href={`https://www.${platform}.com/${userId}`}>{platform}</a>!</p>
+    <div style="display: flex; justify-content: center;gap:1rem">
+        <Social platform="twitter" userId="onadebi" iconPath="/icons/twitter.svg" />
+        <Social platform="facebook" userId="onadebi" iconPath="/icons/twitter.svg" />
+        <Social funny="" platform="Funny"/>
+    </div>
+    <p id="year" style="text-align: center;">&copy; Onadebi {year}</p>
+</footer>

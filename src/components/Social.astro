@@ -1,0 +1,11 @@
+---
+interface IProps {
+    platform: string;
+    userId: string;
+    iconPath: string;
+    useIcon: boolean;
+}
+const {platform, userId, iconPath, useIcon}  = Astro.props as IProps;
+---
+
+<a href={`https://www.${platform}.com/${userId}`} target="_blank">{useIcon ? `<img src=${iconPath} height="16" />`: platform}</a>
