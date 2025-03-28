@@ -1,8 +1,10 @@
 ---
+layout:  ../../layouts/MarkdownPostLayout.astro
 title: 'Getting started blogging'
 pubDate: 2025-03-30
 description: 'This is a test blog post'
 author: 'Onadebi'
+image: {url: 'https://plus.unsplash.com/premium_photo-1687119905599-09fe40700389?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt:'Getting started.'}
 tags: ["blogging","Journaling"]
 ---
 # First entry
