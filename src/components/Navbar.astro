@@ -1,9 +1,12 @@
 ---
 import "../styles/global.css";
+const navItems =[
+  { path: '/',label:'Home'},
+  { path: '/about',label:'About'},
+  { path: '/blog',label:'Blog'}
+]
 ---
 
 <div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/blog">Blog</a>
+  {navItems.map(i=>(<a href={i.path} style="cursor:pointer;">{i.label}</a>))}
 </div>

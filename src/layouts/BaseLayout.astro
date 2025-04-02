@@ -28,3 +28,12 @@ const { title, description, keywords } = Astro.props as {
     </script>
   </body>
 </html>
+
+<style is:global>
+  @layer base{
+    :root{
+      --black: #000;
+      --green: rgba(0,255,0,0.5);
+    }
+  }
+</style>
