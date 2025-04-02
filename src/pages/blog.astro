@@ -1,21 +1,17 @@
 ---
+import BlogPost from '../components/BlogPost.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const title: string = 'BLog'
 ---
 <BaseLayout title={title}>
     <section id="posts">
         <h2>Posts</h2>
         <ul>
+            {allPosts.map((post: any) => 
             <li>
-                <a href="/posts/getting-started">Getting started</a>
-            </li>
-            <li>
-                <a href="/posts/software-developer-roadmap">software developer roadmap</a>
-            </li>
-            <li>
-                <a href="/posts/deploy-aspnetcore-to-digitalocean">deploy aspnetcore to digitalocean</a>
-            </li>
+                <BlogPost title={post.frontmatter.title} url={post.url} tags={post.frontmatter.tags}/>
+            </li>)}
         </ul>
     </section>
 </BaseLayout>
