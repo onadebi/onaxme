@@ -19,7 +19,6 @@ const { title, description, keywords } = Astro.props as {
     <title>{title}</title>
   </head>
   <body>
-    <h1>Astro</h1>
     <Header />
     <slot />
     <Footer />
@@ -28,3 +27,12 @@ const { title, description, keywords } = Astro.props as {
     </script>
   </body>
 </html>
+
+<style is:global>
+  @layer base{
+    :root{
+      --black: #000;
+      --green: rgba(0,255,0,0.5);
+    }
+  }
+</style>
