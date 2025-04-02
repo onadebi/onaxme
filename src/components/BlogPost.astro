@@ -1,0 +1,13 @@
+---
+interface IProps{
+    title: string;
+    tags: string[];
+    url: string;
+}
+// const {frontmatter} = Astro.props;
+const params = Astro.props as IProps;
+---
+
+<a href={params.url}>{params.title}</a> 
+- <span>{params.tags.map((tag: string)=> <i><a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>,&nbsp;</i>)}</span>
+
