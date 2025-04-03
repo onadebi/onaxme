@@ -1,4 +1,5 @@
-export const prerender = false; // Not needed in 'server' mode
+// export const prerender = false; // Not needed in 'server' mode
+export const prerender = true; 
 import type { APIRoute } from "astro";
 import db from "../../configs/dbConfig";
 import { type NewItem, items } from "../../db/schema/schema";
