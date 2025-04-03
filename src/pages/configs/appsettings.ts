@@ -26,7 +26,7 @@ const appsettings = {
         synchronize: true,
         logging: false,
 
-        dbConString: process.env.DbConString || '',
+        dbConString: process.env.DbConString || 'postgresql://postgres:onadebi@localhost:5432/onaxme',
     },
 
 }
