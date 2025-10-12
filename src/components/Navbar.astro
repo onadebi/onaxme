@@ -1,12 +1,14 @@
 ---
-import "../styles/global.css";
+import "../css/global.css";
+const currentPath = Astro.url.pathname;
 const navItems =[
   { path: '/',label:'Home'},
   { path: '/about',label:'About'},
   { path: '/blog',label:'Blog'}
 ]
+
 ---
 
 <div class="nav-links">
-  {navItems.map(i=>(<a href={i.path} style="cursor:pointer;">{i.label}</a>))}
+  {navItems.map(i=>(<a href={i.path} style="cursor:pointer;" class:list={{ 'active': i.path === currentPath }}>{i.label}</a>))}
 </div>

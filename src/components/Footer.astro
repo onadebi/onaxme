@@ -1,5 +1,6 @@
 ---
 import Social from "./Social.astro";
+import appsettings from "../configs/appsettings";
 const platform = "github";
 const userId= "onadebi";
 const year = new Date().getFullYear();
@@ -12,5 +13,5 @@ const year = new Date().getFullYear();
         <Social platform="facebook" userId="onadebi" iconPath="/icons/twitter.svg" />
         <Social funny="" platform="Funny"/>
     </div>
-    <p id="year" style="text-align: center;">&copy; Onadebi {year}</p>
+    <p id="year" style="text-align: center;">&copy; {appsettings.appName} {year}</p>
 </footer>

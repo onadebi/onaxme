@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const appsettings = {
-    appName: 'Onax',
+    appName: 'Onadebi',
     appKey: 'OnaxAppKey',
     appUrl: process.env.APP_URL || 'http://localhost:4500',
     PORT: Number(process.env.PORT) || 4500,
@@ -26,7 +26,7 @@ const appsettings = {
         synchronize: true,
         logging: false,
 
-        dbConString: process.env.DbConString || '',
+        DbConStr: process.env.DbConStr || '',
     },
 
 }

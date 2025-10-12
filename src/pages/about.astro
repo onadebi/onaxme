@@ -1,32 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title: string = 'About Onaefe';
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const title: string = 'About Onadebi';
+const interests = ["Technology", "Finance", "Open source", "Faith and Spirituality", "Music and Arts",  "Nature and Outdoors", "History and Culture"];
 ---
 
 <BaseLayout title={title}>
         <style>
-            p{
-                margin:0px;
-                padding: 0px;
-
+            .spnBefore  ::before {
+                content: '.:';
             }
-            ul,ol,li{
-                padding: 0.2rem 0px ;
-            }
-            ol>span::after{
-                content: "::";
+            .header {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color:gray;
+                margin-bottom: 0.5rem;
             }
         </style>
 		<div>
-		<p>
-            <ul>
-                {skills.map((v,i)=>{
-                    return <ol><span>{i+1}</span>{v}</ol>
-                })}
-            </ul>
+		<span class="header">About me:</span>
+        <p>
+            I'm <code>Onaefe Edebi</code> (Onadebi), a passionate technology enthusiast. I love building things that make a difference and sharing my journey with others. This is a space where I document my experiences, thoughts, and insights on various topics related to software development, technology trends, finance, and faith and spirituality.
         </p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium quae cumque harum quasi omnis doloribus rerum, asperiores quibusdam voluptates itaque illo tempora nulla minus maxime possimus, doloremque officia ab fugit.</p>
+        <p>
+            Beyond coding, I have a deep interest in finance and investing, always looking for ways to manage and grow resources effectively. Everything I do is rooted in faith and spirituality, finding balance and purpose in life through the lense of spirituality.
+        </p>
+            
 		</div>
+        <p style="margin-top: 1rem;">
+            <span class="header">Interests:</span>
+            {interests.map((v,i)=>{
+                    return <><span class="spnBefore" style="background-color: #f5f5f5; border-radius: 8px; padding: 4px; margin: 4px; ">{v}</span>&nbsp;</>
+                })}
+        </p>
 </BaseLayout>

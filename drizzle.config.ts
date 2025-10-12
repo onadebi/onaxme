@@ -8,7 +8,7 @@ export default defineConfig({
   schema: ['./src/db/schema/**/*.ts'],
   dialect: 'postgresql',
   dbCredentials: {
-    url: appsettings.DB.dbConString!,
+    url: appsettings.DB.DbConStr!,
   },
   //#region customise where migrations are stored in the database
   migrations: {
