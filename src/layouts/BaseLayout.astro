@@ -21,10 +21,12 @@ const { title, description, keywords } = Astro.props as {
   </head>
   <body>
     <div class="menu-header">
-      <h1 style="color:cornflowerblue; background-color: #f5f5f5; border-radius:8px; padding: 2px 10px; width:fit-content;">{appsettings.appName}</h1>
+      <h1 style="background-color: #f5f5f5; border-radius:8px; padding: 2px 10px; width:fit-content;"><a href="/" style="text-decoration: none; color:cornflowerblue;">{appsettings.appName}</a></h1>
       <Header />
     </div>
-    <slot />
+    <div class="wrapper">
+      <slot/>
+    </div>
     <Footer />
     <script>
       import "../scripts/menu.js";
