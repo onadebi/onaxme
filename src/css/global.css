@@ -56,26 +56,27 @@
     margin: 0;
   }
 
-  .nav-links a.active {
+  .nav-links a.active span {
     background-color: #f5f5f5;
-    border-radius: 8px;
+    border-radius: 4px;
+    width: fit-content;
   }
 
   .nav-links a {
     display: block;
     text-align: center;
-    padding: 5px 0;
     text-decoration: none;
+    padding: 5px 0;
     font-size: 1.2rem;
     /* font-weight: bold; */
     /* text-transform: uppercase; */
     margin-right: 10px;
   }
 
-  .nav-links a:hover,
-  .nav-links a:focus {
-    background-color: #ececec;
-    border-radius: 8px;
+  .nav-links a span:hover,
+  .nav-links a span:focus {
+    border-bottom: 2px solid cornflowerblue;
+    border-radius: 5px;
   }
 
   .expanded {
@@ -100,7 +101,7 @@
 
     .nav-links a {
       display: inline-block;
-      padding: 8px 20px;
+      padding: 8px 10px;
     }
 
     .hamburger {

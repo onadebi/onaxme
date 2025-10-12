@@ -10,5 +10,5 @@ const navItems =[
 ---
 
 <div class="nav-links">
-  {navItems.map(i=>(<a href={i.path} style="cursor:pointer;" class:list={{ 'active': i.path === currentPath }}>{i.label}</a>))}
+  {navItems.map(i=>(<a href={i.path} style="cursor:pointer;" class:list={{ 'active': i.path === currentPath }}><span>{i.label}</span></a>))}
 </div>
