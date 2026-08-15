@@ -5,22 +5,33 @@ import BlogPost from '../../components/BlogPost.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import appsettings from '../../configs/appsettings';
 const posts: CollectionEntry<"blog-posts">[] = await getCollection("blog-posts");
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const title: string = 'Blog';
 // const allPosts = Object.values(import.meta.glob('../../content/posts/*.md', { eager: true }));
 ---
 <BaseLayout title={title} pageName='blog'>
     <section id="posts">
-        <h2>Posts</h2>
-        <ul>
-            <!-- {allPosts.map((post: any) => 
-            <li>
-                <BlogPost title={post.frontmatter.title} url={post.url} tags={post.frontmatter.tags}/>
-            </li>)}
-            <hr/> -->
+        <div class="bg-zinc-50 dark:bg-[#141414] py-16 mb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-white dark:bg-[#1a1a1a] text-[var(--color-primary)] dark:text-[var(--color-primary-light)] text-sm font-semibold tracking-wide mb-4 shadow-sm border border-zinc-200 dark:border-zinc-800">
+                    MY THOUGHTS
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
+                    Latest <span class="text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">Articles</span>
+                </h1>
+                <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                    Insights, tutorials, and thoughts on software engineering, architecture, and technology.
+                </p>
+            </div>
+        </div>
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {posts.map((post) => 
-            <li>
-                <BlogPost title={post.data.title} url={appsettings.route.blog.postRoute(post.id)} tags={post.data.tags}/>
-            </li>)}
-        </ul>
+                <BlogPost title={post.data.title} url={appsettings.route.blog.postRoute(post.id)} 
+                tags={post.data.tags} date={post.data.pubDate} image={post.data.image.url} description={post.data.description} />
+           )} 
+    </div>
+</div>
+
     </section>
 </BaseLayout>

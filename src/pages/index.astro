@@ -1,7 +1,9 @@
 ---
 const title: string = "Onax - Building things";
 import FloatingBadge from "../components/FloatingBadge.astro";
+import QuickSkillSection from "../components/QuickSkillSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 ---
 
 <BaseLayout title={title} pageName="home">
@@ -16,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           Available for new projects
         </span>
         <h1 class="text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white leading-tight mb-6">
-          i<span class="text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">Build</span>Systems!
+          i<span class="text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">Build</span><br/>Systems!
         </h1>
         <p class="text-lg text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto lg:mx-0">
           I build scalable enterprise systems. With over 10 years of experience, I
@@ -40,7 +42,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Banner Strip -->
-  <div class="bg-[var(--color-primary)] py-4 w-full overflow-hidden">
+  <div class="bg-[var(--color-primary)] py-6 w-full overflow-hidden">
     <div class="flex gap-8 items-center justify-center text-white/90 text-sm md:text-base font-semibold tracking-wider flex-wrap px-4">
       <span class="flex items-center gap-2">✦ Microservices</span>
       <span class="flex items-center gap-2">✦ QA Automation</span>
@@ -49,37 +51,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </div>
 
-  <!-- Quick Skills Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold text-zinc-900 dark:text-white">Core Expertise</h2>
-      <p class="mt-4 text-zinc-600 dark:text-zinc-400">The technologies I work with to build modern web applications.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800 hover:-translate-y-1 transition-transform">
-        <div class="w-12 h-12 bg-[var(--color-primary)]/10 text-[var(--color-primary)] dark:text-[var(--color-primary-light)] rounded-lg flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Development</h3>
-        <p class="text-zinc-600 dark:text-zinc-400">C#, TypeScript/JavaScript, ASP.NET Core, React/NextJS, Astro</p>
-      </div>
-      
-      <div class="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800 hover:-translate-y-1 transition-transform">
-        <div class="w-12 h-12 bg-[var(--color-primary)]/10 text-[var(--color-primary)] dark:text-[var(--color-primary-light)] rounded-lg flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Architecture & Cloud</h3>
-        <p class="text-zinc-600 dark:text-zinc-400">Microservices, Azure App Services, Docker, Kubernetes, RabbitMQ</p>
-      </div>
-      
-      <div class="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800 hover:-translate-y-1 transition-transform">
-        <div class="w-12 h-12 bg-[var(--color-primary)]/10 text-[var(--color-primary)] dark:text-[var(--color-primary-light)] rounded-lg flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Databases</h3>
-        <p class="text-zinc-600 dark:text-zinc-400">SQL Server, Postgres, Oracle, Sqlite, MongoDb</p>
-      </div>
-    </div>
-  </section>
+  <QuickSkillSection />
 </BaseLayout>
