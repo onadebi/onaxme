@@ -8,6 +8,5 @@ interface IProps{
 const params = Astro.props as IProps;
 ---
 
-<a href={params.url}>{params.title}</a> 
-- <span>{params.tags.map((tag: string)=> <i><a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>,&nbsp;</i>)}</span>
+<a href={params.url}>{params.title}</a>&nbsp;- <span>{params.tags.map((tag: string)=> <i><a href={`/blog/tags/${tag.toLowerCase()}`}>{tag}</a>,&nbsp;</i>)}</span>
 

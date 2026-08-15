@@ -1,12 +1,24 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import appsettings from "../configs/appsettings";
-const { title, description, keywords } = Astro.props as {
-  title: "Onax - Freestyle building of things";
-  description: "Onax is a blog where I write about my journey as a software developer, my thoughts on technology and my experiences as a human being.";
-  keywords: "Onax, Onaefe, Onadebi, Software Developer, Web Developer, JavaScript, React, Astro, Svelte, Nodejs, Express, MongoDB, TailwindCSS, HTML, CSS, Web Development, Software Development, Technology, Blog";
-};
+import seoData from '../data/seo.json';
+
+
+interface Props {
+	title?: string;
+	description?: string;
+  keywords?: string;
+  pageName: keyof typeof seoData | 'blog';
+}
+
+let { title, description,keywords, pageName } = Astro.props;
+const seo = pageName === 'blog' ? { title: 'Blog | Onaefe E.', description: 'Articles and writings by Onaefe Edebi', keywords: 'blog, software, engineering' } : (seoData[pageName as keyof typeof seoData] || seoData['home']);
+
+title = title ? `${title} | Onaefe Edebi` : seo.title;
+description = description ? description : seo.description;
+keywords = keywords ? keywords : seo.keywords;
 ---
 
 <html lang="en">
@@ -18,27 +30,45 @@ const { title, description, keywords } = Astro.props as {
     <meta name="keywords" content={keywords} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		
+		<ClientRouter />
+		<script is:inline>
+			// Wrap in a function to handle ViewTransitions re-execution
+			function initTheme() {
+				const theme = (() => {
+					if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+						return localStorage.getItem('theme');
+					}
+					if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						return 'dark';
+					}
+					return 'light';
+				})();
+				if (theme === 'light') {
+					document.documentElement.setAttribute('data-theme', 'light');
+				} else {
+					document.documentElement.setAttribute('data-theme', 'dark');
+				}
+				window.localStorage.setItem('theme', theme);
+			}
+			// Run on initial load
+			initTheme();		
+			// Re-run after ViewTransitions swap
+			document.addEventListener('astro:after-swap', initTheme);
+		</script>
   </head>
-  <body>
-    <div class="menu-header">
-      <h1 style="background-color: #f5f5f5; border-radius:8px; padding: 2px 10px; width:fit-content;"><a href="/" style="text-decoration: none; color:cornflowerblue;">{appsettings.appName}</a></h1>
-      <Header />
-    </div>
-    <div class="wrapper">
-      <slot/>
-    </div>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-grow w-full">
+			<slot />
+		</main>
     <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
   </body>
 </html>
-
-<style is:global>
-  @layer base{
-    :root{
-      --black: #000;
-      --green: rgba(0,255,0,0.5);
-    }
-  }
-</style>

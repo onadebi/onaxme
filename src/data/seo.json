@@ -1,0 +1,32 @@
+{
+  "home": {
+    "title": "Onaefe Edebi | Senior Full-Stack Software Developer",
+    "description": "Portfolio of Onaefe Edebi, a Senior Full-Stack Software Developer with 10 years of experience building scalable enterprise systems.",
+    "keywords": "Onaefe Edebi, Full-Stack Developer, Software Engineer, C#, TypeScript, ASP.NET Core, React, Microservices, Azure"
+  },
+  "about": {
+    "title": "About | Onaefe Edebi",
+    "description": "Learn more about Onaefe Edebi's skills, education, and certifications.",
+    "keywords": "Onaefe Edebi skills, Software Developer resume, C#, TypeScript, QA Automation Analyst, J.D. Power, Fanshawe College"
+  },
+  "experience": {
+    "title": "Experience | Onaefe Edebi",
+    "description": "Work history and professional experience of Onaefe Edebi.",
+    "keywords": "Software Developer experience, J.D. Power, Software Business Solutions Consulting, Andela, Emergn, Fidelity Bank, WEMA Bank"
+  },
+  "projects": {
+    "title": "Projects | Onaefe Edebi",
+    "description": "View projects developed by Onaefe Edebi, including enterprise software, microservices, and automation test suites.",
+    "keywords": "Onaefe Edebi projects, Loan Portal, Multi-Goal Targeted Savings, BancAssurance, BVN Validator"
+  },
+  "contact": {
+    "title": "Contact | Onaefe Edebi",
+    "description": "Get in touch with Onaefe Edebi.",
+    "keywords": "Contact Onaefe Edebi, hire Full-Stack Developer, software engineer email"
+  },
+  "other": {
+    "title": "Onaefe Edebi | Senior Full-Stack Software Developer",
+    "description": "Portfolio of Onaefe Edebi, a Senior Full-Stack Software Developer with 10 years of experience building scalable enterprise systems.",
+    "keywords": "Onaefe Edebi, Full-Stack Developer, Software Engineer, C#, TypeScript, ASP.NET Core, React, Microservices, Azure"
+  }
+}

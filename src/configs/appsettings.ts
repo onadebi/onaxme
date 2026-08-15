@@ -28,7 +28,12 @@ const appsettings = {
 
         DbConStr: process.env.DbConStr || '',
     },
-
+    route:{
+        blog:{
+            postRoute:(path :string)=> `/blog/post/${path}`,
+            blogRoute:() => `/blog`
+        }
+    }
 }
 
 export default appsettings;

@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Loan Portal [Web App]",
+    "date": "Nov 2015 – Present",
+    "description": "An application website to capture online real time loan applications for Motion Yield LTD MFB. Every application triggers a notification to the support staff, thereby enabling them to give rapid response to all applications made on the portal.",
+    "technologies": ["Web App"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=Loan+Portal"
+  },
+  {
+    "title": "Multi-Goal Targeted Savings",
+    "date": "Apr 2020 – Dec 2020",
+    "company": "Fidelity Bank PLC",
+    "description": "This is a specialized account type that runs largely independent of core banking application. It is an internal application with secured API endpoints, and a flow that is designed to allow for use of both customers and non-customers of the bank; and can be plugged into any application with a valid profile management system.",
+    "technologies": ["C#", "Asp.net core", "OnaxTools.Utils", "Hangfire", "Postman", "Sql Server", "InMemory caching"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=Multi-Goal+Targeted+Savings",
+    "link": "https://online.fidelitybank.ng/"
+  },
+  {
+    "title": "Fixed deposit investments digitization",
+    "date": "Nov 2019 – Jun 2020",
+    "company": "Fidelity Bank PLC",
+    "description": "Built a web api to interface with the core banking application to expose endpoints to various channels, so as to enable customers be able to carry out self-service Fixed deposit booking without having to physically visit any of the bank branches. Operation of a few hours now takes less than 5 mins to carry out. This application has processed well over $1 million dollars in transactions in less than 8 months.",
+    "technologies": ["C#", "Asp.Net Core", "Postman", "Sql Server", "IIS", "Hangfire"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=Fixed+Deposit+Investments",
+    "link": "https://online.fidelitybank.ng/"
+  },
+  {
+    "title": "Credit Scoring Engine",
+    "date": "Aug 2019 – May 2020",
+    "company": "Fidelity Bank PLC",
+    "description": "Created a finance credit engine scoring application that aggregates results from major bureaus in Nigeria and runs an algorithm across what is retrieved to get an overall score on a customer's credit worthiness to obtain loan facility.",
+    "technologies": [],
+    "image": "https://placehold.co/600x400/222222/FFF?text=Credit+Scoring+Engine"
+  },
+  {
+    "title": "Online Account Opening Web App",
+    "date": "Nov 2018 – Apr 2019",
+    "company": "Wema Bank Plc",
+    "description": "Online Account Opening Web App for Wema Bank.",
+    "technologies": ["Web App"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=Account+Opening+Web+App"
+  },
+  {
+    "title": "BancAssurance",
+    "date": "Sep 2018 – Oct 2018",
+    "company": "Wema Bank Plc",
+    "description": "With the new CBN policy for banks to partner with Insurance companies to drive business growth; this application facilitates a two way communication between the bank and the insurance company for exchange of data and response and also delivery of financial records via rest client and secure token over a Virtual Private Network (VPN). The application generates a unique reference Id for every record shared with the partner institution which is used to track activities and premium payments made by the customer as a result of referral data from the bank. The application is fully role-based and was built using ASP.net MVC, Web Service for back-end portal to communicate with Rest API. Reporting features are integrated for viewing and export to Excel and Pdf.",
+    "technologies": ["ASP.net MVC", "Web Service", "Rest API", "VPN"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=BancAssurance"
+  },
+  {
+    "title": "BVN Validator",
+    "date": "Feb 2018 – Mar 2018",
+    "company": "CREDIT DIRECT LIMITED",
+    "description": "This project is an MVC application that drives the private sector business for verification of profiles of clients requesting loan facility. The application calls a local bank rest api to retrieve customer records based on their BVN number, retrieves their record and photos as a base 64 bit string.",
+    "technologies": ["MVC", "Rest API", "Base64"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=BVN+Validator"
+  },
+  {
+    "title": "RepaymentSMS Notifier [Desktop application]",
+    "date": "Jan 2016 – Feb 2016",
+    "description": "Built using C# and Windows Presentation Foundation (WPF), the application runs on the company web server connecting to a remote SMS web service and spooling records from the company database to remind customers ahead of their loan repayment date. This has helped to reduce bad debt due to customer ignorance/negligence.",
+    "technologies": ["C#", "WPF", "Web Service"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=RepaymentSMS+Notifier"
+  },
+  {
+    "title": "Document Management and Tracking application (DocMan) [Web Intranet App]",
+    "date": "Sep 2015 – Nov 2015",
+    "description": "This is a Web application built with ASP.NET Mvc5 framework. It is a bespoke application used for easily accessing and keeping track of company customer records. For backup purposes, the physical copies are scanned and stored into the database in binary format, unlike the traditional directory storage pattern, so as to enable easy back up and migration of data, thereby reducing data loss to the barest minimum.",
+    "technologies": ["ASP.NET MVC5", "SQL"],
+    "image": "https://placehold.co/600x400/222222/FFF?text=DocMan+Web+App"
+  }
+]

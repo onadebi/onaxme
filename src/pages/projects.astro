@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from '../components/ProjectCard.astro';
+import projectsData from '../data/projects.json';
+const title = "Projects";
+---
+
+<BaseLayout title={title} pageName="projects">
+  <div class="bg-zinc-50 dark:bg-[#141414] py-16 mb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white dark:bg-[#1a1a1a] text-[var(--color-primary)] dark:text-[var(--color-primary-light)] text-sm font-semibold tracking-wide mb-4 shadow-sm border border-zinc-200 dark:border-zinc-800">
+        MY PORTFOLIO
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
+        My Latest Projects <br/>
+        That <span class="text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">Live On The Net.</span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projectsData.map((project) => (
+        <ProjectCard 
+          title={project.title}
+          date={project.date}
+          company={project.company}
+          description={project.description}
+          technologies={project.technologies}
+          image={project.image}
+          link={project.link}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

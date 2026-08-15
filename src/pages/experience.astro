@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Experience";
+import ExperienceCard from '../components/ExperienceCard.astro';
+
+const experiences = [
+  {
+    role: "Software (QA) Automation Analyst",
+    company: "J.D. Power",
+    location: "Ontario, Canada",
+    date: "May 2024 – August 2026",
+    responsibilities: [
+      "Extended internal DevOps-KPI automation test application, using C#.NET core, running in scheduled pipeline, for migrating and transforming data from Azure DevOps to Grafana insights dashboards.",
+      "Developed Java SpringBoot API for rate limiting Xray automated test reports generation.",
+      "End-to-end automation testing for multiple SAAS services using TypeScript (playwright), Java (Serenity BDD) with Cucumber.",
+      "Developed Playwright automation test suite for enterprise SAAS applications running in client web applications, ensuring error free and confident production deployments."
+    ]
+  },
+  {
+    role: "Full Stack Software Developer",
+    company: "Software Business Solutions Consulting",
+    location: "Lagos, Nigeria",
+    date: "December 2022 – July 2023",
+    responsibilities: [
+      "Worked on enterprise Software architectural design and built distributed event based microservices using various technologies including C#.NET Core, RabbitMQ, Docker, Azure DevOps, and Kubernetes.",
+      "Database SQL query optimization and performance tuning.",
+      "Diving client engagements on technical discussions, with both external and internal product teams.",
+      "Conducted peer code reviews and initiated code testing in Azure DevOps for enforced coding standards.",
+      "Implemented Redis caching strategies to optimize performance.",
+      "Deployed and troubleshot applications on Docker and Linux-based environments."
+    ]
+  },
+  {
+    role: "Full Stack Software Developer",
+    company: "Andela",
+    location: "United States",
+    date: "April 2022 – November 2022",
+    responsibilities: [
+      "Implemented core microservice for migrating data from Azure SQL Server to Snowflake Datawarehouse.",
+      "Worked on background microservices responsible for sending of over 6 million emails weekly.",
+      "Maintained and extended legacy applications fixing bugs and adding features. These applications were mostly Web Forms written in a mix of C# and VB.NET."
+    ]
+  },
+  {
+    role: "Software Engineer in Test (SDET- .NET)",
+    company: "Emergn (Stafflancer)",
+    location: "Ukraine",
+    date: "May 2021 – April 2022",
+    responsibilities: [
+      "Built several automation test frameworks using Behavioural Driven Development (BDD) package SpecFlow (Reqnroll) with Gherkin and C#, running within Docker container on AWS.",
+      "Increased test automation suite from under 150 tests scenario coverage to over 1000 in under 1 year reducing production incidents by over 80%.",
+      "Test automation run with Jenkins, reporting with TestRail and notifications via email and Slack Jenkins integration."
+    ]
+  },
+  {
+    role: "Software Development Team Lead (Full stack – Digital Transformation)",
+    company: "Fidelity Bank Plc.",
+    location: "Victoria Island, Lagos, Nigeria",
+    date: "May 2019 – May 2021",
+    responsibilities: [
+      "Led a team of 10, consisting of software developers, testers, and quality assurance (QA).",
+      "Built two major investment applications, both integrated with the core banking software Finacle, and exposed to customers via internet, mobile and social banking (Facebook and WhatsApp integration- thereby increasing customer reach) which efficiently processed over half a million dollars in less than 8 months."
+    ]
+  },
+  {
+    role: "Software Developer",
+    company: "WEMA Bank Plc.",
+    location: "Lagos, Nigeria",
+    date: "June 2018 – April 2019",
+    responsibilities: [
+      "Upgraded and Integrated Know Your Customer (KYC) web application with Account generation microservice. This was deployed and used by all (over 100) branches of the commercial bank nationwide.",
+      "Reduced operational time for account opening process to under 5 minutes."
+    ]
+  },
+  {
+    role: "Software Developer",
+    company: "Credit Direct Limited (An FCMB Group Subsidiary)",
+    location: "Lagos, Nigeria",
+    date: "September 2017 – June 2018",
+    responsibilities: [
+      "Understanding of business needs and translating to technical documents for application build.",
+      "Built web-based KYC application (integrated with NIBBS) for identity verification."
+    ]
+  },
+  {
+    role: "Software Developer/Analyst",
+    company: "Motion Yield Limited Consumer Finance",
+    location: "Lagos, Nigeria",
+    date: "August 2015 – August 2017",
+    responsibilities: [
+      "I built a document management system for storing, lookup and fast retrieval of all customer records using C#/ASP.Net MVC, SQL Server, jQuery and Bootstrap.",
+      "Built a Bulk SMS application using C# with Windows Presentation foundation (WPF) for triggering customers notifications of their upcoming loan repayments, hosted on-premises server."
+    ]
+  },
+  {
+    role: "IT Administrator and Associate Developer",
+    company: "QLeap Edge Consulting",
+    location: "Rivers, Nigeria",
+    date: "June 2012 - July 2015",
+    responsibilities: [
+      "Responsible for setting up and configuration of small to midsize office networks.",
+      "Websites maintenance and upgrades using C#/ASP.NET and PHP."
+    ]
+  },
+  {
+    role: "Network Roaming Analyst (Temp. role)",
+    company: "Airtel Nigeria",
+    date: "January 2012 - May 2012",
+    responsibilities: [
+      "Daily SIM cards physical testing and reporting for GPRS, Voice and SMS MO and MT for inbound roaming of partner SIM cards on Airtel network.",
+      "Monitoring and analysing test reports to sport patterns"
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} pageName="experience">
+  <div class="bg-zinc-50 dark:bg-[#141414] py-16 mb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white dark:bg-[#1a1a1a] text-[var(--color-primary)] dark:text-[var(--color-primary-light)] text-sm font-semibold tracking-wide mb-4 shadow-sm border border-zinc-200 dark:border-zinc-800">
+        MY JOURNEY
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
+        Professional <span class="text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">Experience</span>
+      </h1>
+      <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        A timeline of my 10+ years in software engineering, leadership, and quality assurance across multiple industries.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="space-y-8">
+      {experiences.map((exp) => (
+        <ExperienceCard 
+          role={exp.role}
+          company={exp.company}
+          location={exp.location}
+          date={exp.date}
+          responsibilities={exp.responsibilities}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

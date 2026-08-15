@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  company?: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  link?: string;
+}
+
+const { title, date, company, description, technologies, image, link } = Astro.props;
+---
+<div class="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800 overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
+  <div class="relative h-48 w-full overflow-hidden">
+    <img src={image} alt={title} class="w-full h-full object-cover" />
+    <div class="absolute top-4 right-4 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur text-xs font-semibold px-3 py-1 rounded-full text-zinc-800 dark:text-zinc-200">
+      {date}
+    </div>
+  </div>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="mb-2">
+      <h3 class="text-xl font-bold text-zinc-900 dark:text-white leading-tight">{title}</h3>
+      {company && <p class="text-sm font-medium text-[var(--color-primary)] dark:text-[var(--color-primary-light)] mt-1">{company}</p>}
+    </div>
+    
+    <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-6 flex-grow">
+      {description}
+    </p>
+    
+    {technologies.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-6">
+        {technologies.map((tech) => (
+          <span class="px-3 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md">
+            {tech}
+          </span>
+        ))}
+      </div>
+    )}
+    
+    {link && (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary-light)] hover:text-[var(--color-primary-hover)] transition-colors mt-auto">
+        View Project 
+        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      </a>
+    )}
+  </div>
+</div>

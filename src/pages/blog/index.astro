@@ -1,0 +1,26 @@
+---
+import {getCollection} from 'astro:content';
+import type {CollectionEntry} from 'astro:content';
+import BlogPost from '../../components/BlogPost.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import appsettings from '../../configs/appsettings';
+const posts: CollectionEntry<"blog-posts">[] = await getCollection("blog-posts");
+const title: string = 'Blog';
+// const allPosts = Object.values(import.meta.glob('../../content/posts/*.md', { eager: true }));
+---
+<BaseLayout title={title} pageName='blog'>
+    <section id="posts">
+        <h2>Posts</h2>
+        <ul>
+            <!-- {allPosts.map((post: any) => 
+            <li>
+                <BlogPost title={post.frontmatter.title} url={post.url} tags={post.frontmatter.tags}/>
+            </li>)}
+            <hr/> -->
+            {posts.map((post) => 
+            <li>
+                <BlogPost title={post.data.title} url={appsettings.route.blog.postRoute(post.id)} tags={post.data.tags}/>
+            </li>)}
+        </ul>
+    </section>
+</BaseLayout>

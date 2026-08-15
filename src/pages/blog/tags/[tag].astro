@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BlogPost from "../../../components/BlogPost.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import appsettings from "../../../configs/appsettings";
+
+const { tag } = Astro.params;
+export async function getStaticPaths() {
+  const all_posts: CollectionEntry<"blog-posts">[] =
+    await getCollection("blog-posts");
+  const allTags = [...new Set(all_posts.flatMap((post) => post.data.tags))];
+
+  return allTags.map((tag) => ({
+    params: { tag },
+    props: { all_posts },
+  }));
+}
+
+const { all_posts } = Astro.props;
+const filteredPosts = all_posts.filter((post: any) =>
+  post.data.tags?.some((t: string) =>
+    t.toLowerCase().trim().includes(tag.toLowerCase().trim()),
+  ),
+);
+---
+
+<BaseLayout title={tag} pageName="other">
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {
+      filteredPosts.map((post) => (
+        <li>
+          <BlogPost
+            title={post.data.title}
+            url={appsettings.route.blog.postRoute(post.id)}
+            tags={post.data.tags}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
